@@ -9,7 +9,7 @@ public class ElektrowniaAtomowa extends Elektrownia{
     private float IloscOdpadow;
     private OdbiorcaOdpadow[] OdbiorcaOdpadow;
 
-    //konstruktor przeciazony
+
     public ElektrowniaAtomowa(String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, int LiczbaReaktorow, float ZuzycieWody, DystrybutorPradu Dystrybutor, float IloscOdpadow, OdbiorcaOdpadow[] OdbiorcaOdpadow){
 
         super(miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, czyPracuje, wlasciciel);
