@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public abstract class Elektrownia {
 
 	private String miasto;
@@ -8,6 +10,7 @@ public abstract class Elektrownia {
 	private int LiczbaPracownikow;
 	private Wlasciciel wlasciciel;
 	private boolean czyPracuje;
+	private Pracownicy pracownicy[];
 	
 	public Elektrownia()
 	{
@@ -27,6 +30,11 @@ public abstract class Elektrownia {
 		this.LiczbaPracownikow = LiczbaPracownikow;
 		this.wlasciciel = wlasciciel;
 		this.czyPracuje = czyPracuje;
+		this.pracownicy = new Pracownicy[getLiczbaPracownikow()];
+
+		for(int i = 0; i<pracownicy.length;i++){
+			pracownicy[i] = new Pracownicy();
+		}
 	}
 
 	
@@ -73,10 +81,19 @@ public abstract class Elektrownia {
 	public void setCzyPracuje(boolean czyPracuje) {
 		this.czyPracuje = czyPracuje;
 	}
-	
+
+	public Pracownicy[] getPracownicy() {
+		return pracownicy;
+	}
+
+	public void setPracownicy(Pracownicy[] pracownicy) {
+		this.pracownicy = pracownicy;
+	}
+
+
 	public String toString()
 	{
-		 return "\nMiasto: " + miasto + "\nmoc chwilowa: " + MocChwilowa + "\nmoc maksymalna: " + MocMaksymalna + "\nliczba pracownikow: " + LiczbaPracownikow + "\nczy pracuje: " + czyPracuje + " \nwlasciciel elektrowni:\t\t" + wlasciciel;
+		 return "\nMiasto: " + miasto + "\nmoc chwilowa: " + MocChwilowa + "\nmoc maksymalna: " + MocMaksymalna + "\nliczba pracownikow: " + LiczbaPracownikow + "\nczy pracuje: " + czyPracuje + " \nwlasciciel elektrowni:\t\t" + wlasciciel  + "\npracownicy: " + Arrays.toString(pracownicy);
 	}
 	
 	public void RozpoczeciePracy(){

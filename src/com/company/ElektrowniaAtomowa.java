@@ -9,7 +9,6 @@ public class ElektrowniaAtomowa extends Elektrownia{
     private float ZuzycieWody;
     private DystrybutorPradu Dystrybutor;
     private float IloscOdpadow;
-    private Pracownicy pracownicy[];
     private OdbiorcaOdpadow[] OdbiorcaOdpadow;
 
     //konstruktor przeciazony
@@ -20,12 +19,7 @@ public class ElektrowniaAtomowa extends Elektrownia{
         this.ZuzycieWody = ZuzycieWody;
         this.Dystrybutor = Dystrybutor;
         this.IloscOdpadow = IloscOdpadow;
-        this.pracownicy = new Pracownicy[getLiczbaPracownikow()];
         this.OdbiorcaOdpadow = OdbiorcaOdpadow;
-
-        for(int i = 0; i<pracownicy.length;i++){
-            pracownicy[i] = new Pracownicy();
-        }
     }
 
     public void ZwiekszMoc() {
@@ -81,14 +75,6 @@ public class ElektrowniaAtomowa extends Elektrownia{
         IloscOdpadow = iloscOdpadow;
     }
 
-    public Pracownicy[] getPracownicy() {
-        return pracownicy;
-    }
-
-    public void setPracownicy(Pracownicy[] pracownicy) {
-        this.pracownicy = pracownicy;
-    }
-
     public OdbiorcaOdpadow[] getOdbiorcaOdpadow() {
         return OdbiorcaOdpadow;
     }
@@ -104,7 +90,6 @@ public class ElektrowniaAtomowa extends Elektrownia{
                 "\nZuzycieWody: " + ZuzycieWody +
                 "\nDystrybutor: " + Dystrybutor.toString() +
                 "\nIloscOdpadow: " + IloscOdpadow +
-                "\npracownicy: " + Arrays.toString(pracownicy) +
                 "\nOdbiorcaOdpadow: " + Arrays.toString(OdbiorcaOdpadow);
     }
 

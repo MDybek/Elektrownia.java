@@ -2,15 +2,18 @@ package com.company;
 import java.util.Random;
 
 public class Pracownicy {
-
+    Random random = new Random();
     private  String Imie;
     private  String Nazwisko;
     private  float Doswiadczenie;
+    private String[] imiona = {"Pawel", "Antoni", "Jan", "Aleksander", "Franciszek", "Jakub", "Szymon", "Mikołaj", "Leon", "Filip", "Stanisław"};
+    private String[] nazwiska = {"Nowak", "Kowalski", "Wiśniewski", "Wójcik", "Kowalczyk", "Kamiński", "Lewandowski", "Zieliński", "Szymański", "Woźniak"};
 
     public Pracownicy() {
-        Imie = "Jan";
-        Nazwisko = "Kowalski";
-        Doswiadczenie = 1;
+
+        Imie = imiona[random.nextInt(imiona.length)];
+        Nazwisko = nazwiska[random.nextInt(nazwiska.length)];
+        Doswiadczenie = random.nextInt(1, 10);
     }
 
     public Pracownicy(String Imie, String Nazwisko, float Doswiadczenie) {
