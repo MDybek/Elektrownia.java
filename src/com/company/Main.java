@@ -34,12 +34,11 @@ public class Main {
 
 
 
-    System.out.println(Czarnobyl.toString());
-    //System.out.println(Turow.toString());
+    //System.out.println(Czarnobyl.toString());
     //System.out.println(Belchatow.toString());
     //System.out.println(Brudew.toString());
-    Czarnobyl.RozpoczeciePracy();
-    Czarnobyl.WywozOdpadow(1);
-    System.out.println(Czarnobyl.toString());
+    System.out.println(Turow.toString());
+    Turow.RozpoczeciePracy();
+    System.out.println(Turow.toString());
     }
 }
