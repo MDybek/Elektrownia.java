@@ -5,17 +5,15 @@ public class ElektrowniaAtomowa extends Elektrownia{
 
     private int LiczbaReaktorow;
     private float ZuzycieWody;
-    private DystrybutorPradu Dystrybutor;
     private float IloscOdpadow;
     private OdbiorcaOdpadow[] OdbiorcaOdpadow;
 
 
     public ElektrowniaAtomowa(String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, int LiczbaReaktorow, float ZuzycieWody, DystrybutorPradu Dystrybutor, float IloscOdpadow, OdbiorcaOdpadow[] OdbiorcaOdpadow){
 
-        super(miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, czyPracuje, wlasciciel);
+        super(miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, czyPracuje, wlasciciel, Dystrybutor);
         this.LiczbaReaktorow = LiczbaReaktorow;
         this.ZuzycieWody = ZuzycieWody;
-        this.Dystrybutor = Dystrybutor;
         this.IloscOdpadow = IloscOdpadow;
         this.OdbiorcaOdpadow = OdbiorcaOdpadow;
     }
@@ -57,13 +55,6 @@ public class ElektrowniaAtomowa extends Elektrownia{
         ZuzycieWody = zuzycieWody;
     }
 
-    public DystrybutorPradu getDystrybutor() {
-        return Dystrybutor;
-    }
-
-    public void setDystrybutor(DystrybutorPradu dystrybutor) {
-        Dystrybutor = dystrybutor;
-    }
 
     public float getIloscOdpadow() {
         return IloscOdpadow;
@@ -86,7 +77,6 @@ public class ElektrowniaAtomowa extends Elektrownia{
         return "ElektrowniaAtomowa:" + super.toString() +
                 "\nLiczbaReaktorow: " + LiczbaReaktorow +
                 "\nZuzycieWody: " + ZuzycieWody +
-                "\nDystrybutor: " + Dystrybutor.toString() +
                 "\nIloscOdpadow: " + IloscOdpadow +
                 "\nOdbiorcaOdpadow: " + Arrays.toString(OdbiorcaOdpadow);
     }

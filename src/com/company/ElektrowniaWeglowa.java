@@ -20,11 +20,9 @@ public class ElektrowniaWeglowa extends ElektrowniaNaPaliwoStale {
 
     public ElektrowniaWeglowa(String Miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, String RodzajPaliwa, float ZuzyciePaliwa, int LiczbaBlokow, DystrybutorPradu DystrybutorPradu, float IloscWeglaWMagazynie, DostawcaWegla DostawcaWegla, float MaxPojemnoscMagazynu) {
 
-        super(Miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, wlasciciel, czyPracuje, RodzajPaliwa, ZuzyciePaliwa, LiczbaBlokow);
+        super(Miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, wlasciciel, czyPracuje, RodzajPaliwa, ZuzyciePaliwa, LiczbaBlokow, DystrybutorPradu);
         this.DostawcaWegla = DostawcaWegla;
-        this.DystrybutorPradu = DystrybutorPradu;
         this.IloscWeglaWMagazynie = IloscWeglaWMagazynie;
-        this.Pracownicy = new Pracownicy[getLiczbaPracownikow()];
         this.MaxPojemnoscMagazynu = MaxPojemnoscMagazynu;
     }
 

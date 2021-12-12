@@ -11,6 +11,7 @@ public abstract class Elektrownia {
 	private Wlasciciel wlasciciel;
 	private boolean czyPracuje;
 	private Pracownicy pracownicy[];
+	private DystrybutorPradu Dystrybutor;
 	
 	public Elektrownia()
 	{
@@ -20,9 +21,10 @@ public abstract class Elektrownia {
 		LiczbaPracownikow = 0;
 		wlasciciel = new Wlasciciel();
 		czyPracuje = false;
+
 	}
 	
-	public Elektrownia(String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel)
+	public Elektrownia(String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel, DystrybutorPradu Dystrybutor)
 	{
 		this.miasto = miasto;
 		this.MocChwilowa = MocChwilowa;
@@ -31,6 +33,7 @@ public abstract class Elektrownia {
 		this.wlasciciel = wlasciciel;
 		this.czyPracuje = czyPracuje;
 		this.pracownicy = new Pracownicy[getLiczbaPracownikow()];
+		this.Dystrybutor = Dystrybutor;
 
 		for(int i = 0; i<pracownicy.length;i++){
 			pracownicy[i] = new Pracownicy();
@@ -90,10 +93,18 @@ public abstract class Elektrownia {
 		this.pracownicy = pracownicy;
 	}
 
+	public DystrybutorPradu getDystrybutor() {
+		return Dystrybutor;
+	}
+
+	public void setDystrybutor(DystrybutorPradu dystrybutor) {
+		Dystrybutor = dystrybutor;
+	}
+
 
 	public String toString()
 	{
-		 return "\nMiasto: " + miasto + "\nmoc chwilowa: " + MocChwilowa + "\nmoc maksymalna: " + MocMaksymalna + "\nliczba pracownikow: " + LiczbaPracownikow + "\nczy pracuje: " + czyPracuje + " \nwlasciciel elektrowni:\t\t" + wlasciciel  + "\npracownicy: " + Arrays.toString(pracownicy);
+		 return "\nMiasto: " + miasto + "\nmoc chwilowa: " + MocChwilowa + "\nmoc maksymalna: " + MocMaksymalna + "\nliczba pracownikow: " + LiczbaPracownikow + "\nczy pracuje: " + czyPracuje + " \nwlasciciel elektrowni:\t\t" + wlasciciel  + "\npracownicy: " + Arrays.toString(pracownicy) + "\nDystrybutor: " + Dystrybutor.toString();
 	}
 	
 	public void RozpoczeciePracy(){
